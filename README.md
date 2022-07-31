@@ -17,3 +17,23 @@ Este projeto se trata de uma aplicação desenvolvida utilizando React Native. O
 - TouchableOpacity
 - Picker
 - Audio
+
+## Para executar esse projeto em sua máquina:
+
+#### Você vai precisar
+
+- Você precisará do expo
+- Node
+- npm
+- React Native
+- AVD (Android Virtual Device), Expo Go ou outros disposítivo para emular a aplicação
+
+#### Passo-a-passo
+
+1. abra uma pasta na área de trabalho
+2. abra o git bash e dê o comando git clone git@github.com:Emesson-cmd/TimerTron.git
+3. cd TimerTron
+4. npm install
+5. expo start
+6. aparte a letra "a" para abrir a aplicação no android numa AVD (Android Virtual Device). Você pode abrir também na web, no iPhone, ou até mesmo no seu disposiivo físico.
+
