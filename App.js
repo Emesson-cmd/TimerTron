@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+
+import alarms from './src/utils/alarms'
+
+import SetTimer from './src/screens/SetTimer';
+import Timer from './src/screens/Timer'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [minutos, setarMinutos] = useState('0')
+  const [segundos, setarSegundos] = useState('1')
+  const [estado, setarEstado] = useState('settimer')
+  const [alarmeSound, setarAlarmeSound] = useState(alarms)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (estado === 'settimer') {
+    return (
+        <SetTimer
+          minutos={minutos}
+          setarMinutos={setarMinutos}
+          segundos={segundos}
+          setarSegundos={setarSegundos}
+          estado={estado}
+          setarEstado={setarEstado}
+          alarmeSound={alarmeSound}
+          setarAlarmeSound={setarAlarmeSound}
+        />
+    );
+  } else if (estado === 'timer'){
+    return (
+      <Timer 
+        minutos={minutos} 
+        setarMinutos={setarMinutos}
+        segundos={segundos}
+        setarSegundos={setarSegundos}
+        estado={estado}
+        setarEstado={setarEstado}
+        alarmeSound={alarmeSound}
+        setarAlarmeSound={setarAlarmeSound}
+      />
+    )
+  }
+}
